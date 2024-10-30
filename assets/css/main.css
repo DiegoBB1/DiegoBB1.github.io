@@ -1,0 +1,30 @@
+/* CSS Document */
+
+.banner{
+	text-align: center;
+	background-color: #fcb80a;
+}
+
+.sub_banner{
+	text-align: center;
+	background-color: #66b3e3;
+}
+
+a:link{
+	color: #000000;
+}
+
+.nav_link{
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.nav_lin:hover{
+	text-decoration: none;
+	color: #0000FF;
+}
+
+.my_photo{
+	width: 600px;
+	height: 800px;
+}
