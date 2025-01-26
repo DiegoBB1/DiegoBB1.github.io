@@ -94,32 +94,35 @@ section {
 2. Navigation
 --------------------*/
 
-.navbar-default {
-	background-color: #F1F1F1;
-	border-color: transparent
-}
-.navbar-default .navbar-brand {
-	font-family: "Roboto",sans-serif;
+/* General styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 4px;
+  }
+  
+  .logo {
+    font-size: 2em;
+    font-family: "Roboto",sans-serif;
 	color: #000000;
     padding: 5px;
+    margin-left: -15px;
+    
+  }
+
+  .logo:hover{
+	color: #fec503;
+    text-decoration: none;
 }
-.navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active {
-	color: #fec503
-}
-.navbar-default .navbar-collapse {
-	border-color: rgba(255,255,255,.02)
-}
-.navbar-default .navbar-toggle {
-	background-color: #fed136;
-	border-color: #fed136
-}
-.navbar-default .navbar-toggle .icon-bar {
-	background-color: #fff
-}
-.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus {
-	background-color: #fed136
-}
-.navbar-default .nav li a {
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links a{
     font-family: "Roboto",sans-serif;
     text-transform: uppercase;
     font-size: 13px;
@@ -130,58 +133,70 @@ section {
     border-color: #FFF;
     margin: 10px 15px;
     padding: 0 0 2px 0;
-}
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    color: #ff9800;
+  }
 
-.navbar-default .nav li a.active {
-/*    color: #FF0000;*/
-	border-color: #000;
-}
-
-.navbar-default .nav li a:hover,.navbar-default .nav li a:focus {
-	border-color: #991919;
-	outline: 0
-}
-
-.navbar-default .navbar-nav>.active>a {
-	border-radius: 0;
-	color: #fff;
-	background-color: #fed136
-}
-.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
-	color: #fff;
-	background-color: #fec503
-}
-
-@media (min-width:768px) {
-	.navbar-default
-	{
-		background-color: transparent;
-		padding: 40px 0 0px;
-    	-webkit-transition:padding .3s;
-		-moz-transition:padding .3s;
-		transition:padding .3s;
-		border:0
-	}
-	.navbar-default .navbar-brand {
-		font-size: 2em;
-		-webkit-transition:all .3s;
-		-moz-transition:all .3s;
-		transition:all .3s;
-        padding: 0px;
-	}
-	.navbar-default .navbar-nav>.active>a {
-		border-radius: 3px
-	}
-	.navbar-default.navbar-shrink {
-		background-color: #222;
-		padding: 10px 0
-	}
-    .navbar-nav>li>a {
-        padding-top: 15px;
-        padding-bottom: 4px;
+  .nav-links li a.active {
+        border-color: #000;
     }
-}
+  
+  /* Menu Toggle Button */
+  .menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: black;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 200px;
+  }
+  
+  .menu-toggle:focus {
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background: #333;
+      position: fixed; /* Ensure it overlays the page */
+      top: 60px; /* Adjust based on header height */
+      right: 20px;
+      width: 200px;
+      border: 1px solid #444;
+      border-radius: 5px;
+      padding: 10px;
+      z-index: 1000; /* Bring it above other content */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
 
+    .nav-links a{
+        text-transform: none;
+        font-family: "Raleway", Sans-serif;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        border-bottom: 0px;
+      }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  }
+  
+  
 .content {
   flex: 1 0 auto;
 }
